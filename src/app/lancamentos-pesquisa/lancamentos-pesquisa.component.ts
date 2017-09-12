@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-lancamentos-pesquisa',
+  templateUrl: './lancamentos-pesquisa.component.html',
+  styleUrls: ['./lancamentos-pesquisa.component.css']
 })
-export class AppComponent {
-  title = 'app';
+export class LancamentosPesquisaComponent implements OnInit {
 
   lancamentos = [
     { tipo: 'DESPESA', descricao: 'Compra de pão', dataVencimento: '30/06/2017',
@@ -24,4 +23,10 @@ export class AppComponent {
     { tipo: 'DESPESA', descricao: 'Mensalidade musculação', dataVencimento: '13/07/2017',
       dataPagamento: null, valor: 180, pessoa: 'Academia Top' }
   ];
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
