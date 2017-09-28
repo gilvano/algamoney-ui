@@ -11,24 +11,24 @@
       <label>Nome</label>
       <input pInputText type="text" name="nome" ngModel #nome="ngModel" required minlength="5">
 
-     <!-- <app-message [control]="nome" error="required"
+     <app-message [control]="nome" error="required"
         text="Informe o Nome"></app-message>
       <app-message [control]="nome" error="minlength"
-        text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} carácteres"></app-message> -->
+        text="Mínimo de {{ nome.errors?.minlength?.requiredLength }} carácteres"></app-message>
     </div>
 
     <div class="ui-g-12 ui-md-9 ui-fluid">
       <label>Logradouro</label>
       <input pInputText type="text" name="logradouro" ngModel #logradouro="ngModel" required>
-      <!-- <app-message [control]="logradouro" error="required"
-        text="Informe o Logradouro"></app-message> -->
+      <app-message [control]="logradouro" error="required"
+        text="Informe o Logradouro"></app-message>
     </div>
 
     <div class="ui-g-12 ui-md-3 ui-fluid">
       <label>Número</label>
       <input pInputText type="text" name="numero" ngModel #numero="ngModel" required>
-      <!--<app-message [control]="numero" error="required"
-      text="Informe o Número"></app-message>-->
+      <app-message [control]="numero" error="required"
+      text="Informe o Número"></app-message>
     </div>
 
     <div class="ui-g-12 ui-md-4 ui-fluid">

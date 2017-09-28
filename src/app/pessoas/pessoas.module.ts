@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
 import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
@@ -29,7 +30,8 @@ import { CommonModule } from '@angular/common';
     SelectButtonModule,
     DropdownModule,
     CurrencyMaskModule,
-    InputMaskModule
+    InputMaskModule,
+    SharedModule
   ],
   declarations: [
     PessoaCadastroComponent,

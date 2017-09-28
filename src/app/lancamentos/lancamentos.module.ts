@@ -1,4 +1,4 @@
-import { MessageComponent } from './../message/message.component';
+import { SharedModule } from './../shared/shared.module';
 import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
@@ -30,7 +30,9 @@ import { CommonModule } from '@angular/common';
     SelectButtonModule,
     DropdownModule,
     CurrencyMaskModule,
-    InputMaskModule
+    InputMaskModule,
+
+    SharedModule
   ],
   declarations: [
     LancamentoCadastroComponent,
