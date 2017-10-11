@@ -1,6 +1,10 @@
+import { ErrorHandlerService } from './../../core/error-handler.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { LazyLoadEvent, ConfirmationService } from 'primeng/components/common/api';
+import { ToastyService } from 'ng2-toasty';
+
 import { LancamentoService, LancamentoFiltro} from './../lancamento.service';
-import { Component, OnInit } from '@angular/core';
-import { LazyLoadEvent } from 'primeng/components/common/api';
 
 
 @Component({
@@ -13,11 +17,17 @@ export class LancamentosPesquisaComponent implements OnInit {
   totalRegistros = 0;
   filtro = new LancamentoFiltro();
   lancamentos = [];
+  @ViewChild('tabela') grid;
 
-  constructor(private lancamentoService: LancamentoService) { }
+  constructor(
+    private lancamentoService: LancamentoService,
+    private toasty: ToastyService,
+    private confirmation: ConfirmationService,
+    private errorHandler: ErrorHandlerService
+  ) { }
 
   ngOnInit() {
-    //this.pesquisar();
+    // this.pesquisar();
   }
 
   pesquisar(pagina = 0) {
@@ -26,13 +36,39 @@ export class LancamentosPesquisaComponent implements OnInit {
       .then(resultado => {
         this.lancamentos = resultado.lancamentos;
         this.totalRegistros = resultado.total;
-      });
+      })
+      .catch(erro => this.errorHandler.handle(erro));
   }
 
   aoMudarPagina(event: LazyLoadEvent) {
     const pagina = event.first / event.rows;
     this.pesquisar(pagina);
-    console.log(pagina);
+    // console.log(pagina);
+  }
+
+  excluir(lancamento: any) {
+    this.lancamentoService.excluir(lancamento.codigo)
+    .then(() => {
+      if (this.grid.first === 0 ) {
+        this.pesquisar();
+      } else {
+        this.grid.first = 0;
+      }
+
+      this.toasty.success('Lançamento excluído com sucesso!');
+    })
+    .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  confirmarExclusao(lancamento: any) {
+    this.confirmation.confirm({
+      header: 'Confirmação',
+      message: 'Tem certeza que deseja excluir?',
+      icon: 'fa fa-question-circle',
+      accept: () => {
+        this.excluir(lancamento);
+      }
+    });
   }
 
 }
