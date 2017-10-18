@@ -9,6 +9,7 @@ import { ErrorHandlerService } from './error-handler.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PessoaService } from './../pessoas/pessoa.service';
 import { LancamentoService } from './../lancamentos/lancamento.service';
+import { CategoriaService } from './../categorias/categorias.service';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { LancamentoService } from './../lancamentos/lancamento.service';
     PessoaService,
     ConfirmationService,
     { provide: LOCALE_ID, useValue: 'pt-BR'},
-    ErrorHandlerService
+    ErrorHandlerService,
+    CategoriaService
   ]
 })
 export class CoreModule { }
