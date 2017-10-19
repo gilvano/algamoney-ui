@@ -42,4 +42,8 @@
   color: #fff;
 }
 
+.navbar-menuitem.ativo {
+  background-color: #494541;
+}
+
 
