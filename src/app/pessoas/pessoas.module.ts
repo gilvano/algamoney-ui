@@ -40,9 +40,6 @@ import { CommonModule } from '@angular/common';
     PessoasPesquisaComponent,
     PessoasGridComponent
   ],
-  exports: [
-    PessoaCadastroComponent,
-    PessoasPesquisaComponent
-  ]
+  exports: []
 })
 export class PessoasModule { }
