@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ConfirmationService } from 'primeng/components/common/api';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -36,7 +37,8 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component'
     ConfirmationService,
     { provide: LOCALE_ID, useValue: 'pt-BR'},
     ErrorHandlerService,
-    CategoriaService
+    CategoriaService,
+    Title
   ]
 })
 export class CoreModule { }
