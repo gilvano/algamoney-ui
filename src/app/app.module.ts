@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { AppRountingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { PessoasModule } from './pessoas/pessoas.module';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { AppRountingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,10 +18,10 @@ import { LancamentosModule } from './lancamentos/lancamentos.module';
     BrowserAnimationsModule,
     HttpModule,
 
-    AppRountingModule,
+    CoreModule,
     LancamentosModule,
     PessoasModule,
-    CoreModule
+    AppRountingModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]
