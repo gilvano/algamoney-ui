@@ -1,21 +1,24 @@
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './../shared/shared.module';
-import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
-import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
-import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
-import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { CurrencyMaskModule } from 'ng2-currency-mask';
-import { DropdownModule } from 'primeng/components/dropdown/dropdown';
+import { InputTextareaModule } from 'primeng/primeng';
 import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton';
 import { CalendarModule } from 'primeng/components/calendar/calendar';
-import { InputTextareaModule } from 'primeng/primeng';
 import { TooltipModule } from 'primeng/components/tooltip/tooltip';
 import { DataTableModule } from 'primeng/components/datatable/datatable';
 import { ButtonModule } from 'primeng/components/button/button';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
-import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
+import { DropdownModule } from 'primeng/components/dropdown/dropdown';
+
+import { SharedModule } from './../shared/shared.module';
+import { PessoasRoutingModule } from './pessoas-routing.module';
+import { PessoasGridComponent } from './pessoas-grid/pessoas-grid.component';
+import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
+import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 
 @NgModule({
   imports: [
@@ -33,7 +36,9 @@ import { CommonModule } from '@angular/common';
     DropdownModule,
     CurrencyMaskModule,
     InputMaskModule,
-    SharedModule
+
+    SharedModule,
+    PessoasRoutingModule
   ],
   declarations: [
     PessoaCadastroComponent,

@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { ErrorHandlerService } from './../../core/error-handler.service';
 import { ToastyService } from 'ng2-toasty';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -22,10 +23,12 @@ export class PessoasPesquisaComponent implements OnInit {
     private pessoaService: PessoaService,
     private toasty: ToastyService,
     private confirmation: ConfirmationService,
-    private errorHandler: ErrorHandlerService
+    private errorHandler: ErrorHandlerService,
+    private title: Title
   ) { }
 
   ngOnInit() {
+    this.title.setTitle('Pesquisa de Pessoas');
   }
 
   pesquisar(pagina = 0) {
